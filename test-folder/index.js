@@ -1,6 +1,7 @@
 'use strict';
 // array of questions for user
 const inquirer = require('inquirer');
+const fs = require('fs');
 let name_of_project = [];
 let user_description = [];
 let list_of_steps = [];
@@ -116,6 +117,7 @@ function user_github_name() {
     inquirer.prompt(user_githubname_questions).then((answers) => {
         user_github.push(answers.github_name);
         user_email.push(answers.email);
+        writeREADme();
         console.log('Name of Project:' + name_of_project)
         console.log('Users Contributed:' + users_contributed)
         console.log('Brief Description:' + user_description)
@@ -133,14 +135,18 @@ inquirer.prompt(first_questions).then((answers) => {
         user_steps();
     } 
     else {
-    //GOING TO ASK FINAL QUESTIONS
+        user_contributed();
     }
 });
 
 // function to write README file
-// function writeToFile(fileName, data) {
-// }
-
+function writeREADme(){
+    var name_of_the_project = JSON.stringify(name_of_project)
+fs.writeFile('README.md', name_of_the_project, function (err) {
+    if (err) return console.log(err);
+    console.log('Hello World > helloworld.txt');
+  });
+}
 // function to initialize program
 // function init() {
 
@@ -148,12 +154,4 @@ inquirer.prompt(first_questions).then((answers) => {
 
 // function call to initialize program
 // init();
-
-//////////////////////////////////
-// {            // ASKS IF THEY WANT TO ADD ANOTHER ONE
-//     type: 'confirm',
-//     name: 'askAgain',
-//     message: 'Want to enter another TV show favorite (just hit enter for YES)?',
-//     default: true,
-//   },
 
