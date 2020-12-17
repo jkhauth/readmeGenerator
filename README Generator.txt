@@ -27,6 +27,16 @@ inquirer prompt types: input, number, confirm, list, rawlist, expand, checkbox, 
    1. What is your email?
       1. Added to “email” for questions section
 
+LICENSES:
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](http://creativecommons.org/publicdomain/zero/1.0/)
+
+
+
+
+
+
 
 When all answered: table of contents is built with the corresponding answers being in the respected area and table of contents links work.
 
